@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import styles from './Header.module.css';
 import CustomButton from '../Button/CustomButton';
 
-export default function Header({ aboutRef, productRef }) {
+export default function Header({ aboutRef, productRef, data }) {
   const menuList = [
     {
       name: 'Home',
@@ -44,7 +44,7 @@ export default function Header({ aboutRef, productRef }) {
           <Navbar.Brand
             href='/'
             className='text-white font-semibold text-2xl hover:underline hover:text-slate-900 transition-all'>
-            ShoesX
+            {data?.title}
           </Navbar.Brand>
           <Navbar.Toggle className={styles.toggle} />
           <Navbar.Collapse className='px-5 py-1 ul'>

@@ -1,10 +1,13 @@
 import Head from 'next/head';
 import { About, Hero, Layout, Product } from '@/components';
 import { useRef } from 'react';
+import useData from '@/hooks/useData';
 
 export default function Home() {
   const aboutRef = useRef(null);
   const productRef = useRef(null);
+  const { data, isLoading } = useData('api/v1/ads');
+
   return (
     <>
       <Head>
@@ -24,10 +27,23 @@ export default function Home() {
       </Head>
       <Layout
         aboutRef={aboutRef}
-        productRef={productRef}>
-        <Hero />
-        <About aboutRef={aboutRef} />
-        <Product productRef={productRef} />
+        productRef={productRef}
+        dataHeader={data?.hero}
+        dataFooter={data?.hero}>
+        <Hero
+          data={data?.hero}
+          isLoading={isLoading}
+        />
+        <About
+          aboutRef={aboutRef}
+          data={data?.about}
+          isLoading={isLoading}
+        />
+        <Product
+          productRef={productRef}
+          data={data?.product}
+          isLoading={isLoading}
+        />
       </Layout>
     </>
   );

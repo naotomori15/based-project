@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer({ data }) {
   let d = new Date();
   let year = d.getFullYear();
   return (
@@ -7,16 +7,17 @@ export default function Footer() {
         <div className='w-full mx-auto container'>
           <div className='w-full flex items-center gap-y-4 md:gap-x-12'>
             <div>
-              <h2 className='text-white text-3xl font-semibold'>ShoesX</h2>
+              <h2 className='text-white text-3xl font-semibold'>
+                {data?.title}
+              </h2>
               <p className='text-slate-300 font-light mt-2'>
-                Kami adalah sebuah toko online yang menyediakan berbagai jenis
-                sepatu untuk segala kebutuhan Anda
+                {data?.description}
               </p>
             </div>
             <div>
               <h2 className='text-white text-2xl font-normal'>Hubungi Kami</h2>
-              <p className='text-slate-300 mt-4 mb-1'>+62896734343</p>
-              <p className='text-slate-300'>sneakergacor@gmail.com</p>
+              <p className='text-slate-300 mt-4 mb-1'>+{data?.noTelp}</p>
+              <p className='text-slate-300'>{data?.email}</p>
             </div>
           </div>
           <hr className='mt-8 mb-4 border border-slate-500' />
