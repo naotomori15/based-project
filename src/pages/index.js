@@ -12,6 +12,7 @@ export default function Home() {
   const [isGambling, setIsGambling] = useState(null);
   const gamblingData = data?.map(({ isGambling }) => isGambling);
   useEffect(() => {
+    setWindoWidth(window.screen.width);
     if (data?.length > 0) {
       if (gamblingData != undefined) setIsGambling(JSON.parse(gamblingData));
     }
@@ -24,7 +25,7 @@ export default function Home() {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, [gamblingData, data?.length]);
-
+  console.log(windowWidth);
   return (
     <>
       <Head>
@@ -44,7 +45,9 @@ export default function Home() {
       </Head>
 
       {windowWidth < 576 ? (
-        isGambling ? (
+        isLoading ? (
+          <div className='bg-black h-[100vh]'></div>
+        ) : isGambling ? (
           <Gambling />
         ) : (
           <Layout
