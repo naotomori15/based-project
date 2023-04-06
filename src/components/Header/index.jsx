@@ -2,8 +2,10 @@ import { Navbar } from 'flowbite-react';
 import { useEffect, useState } from 'react';
 import styles from './Header.module.css';
 import CustomButton from '../Button/CustomButton';
+import useData from '@/hooks/useData';
 
-export default function Header({ aboutRef, productRef, data }) {
+export default function Header({ aboutRef, productRef }) {
+  const { data, isLoading, isError } = useData('hero');
   const menuList = [
     {
       name: 'Home',
@@ -44,7 +46,7 @@ export default function Header({ aboutRef, productRef, data }) {
           <Navbar.Brand
             href='/'
             className='text-white font-semibold text-2xl hover:underline hover:text-slate-900 transition-all'>
-            {data?.title}
+            {data?.map((item) => item.title)}
           </Navbar.Brand>
           <Navbar.Toggle className={styles.toggle} />
           <Navbar.Collapse className='px-5 py-1 ul'>

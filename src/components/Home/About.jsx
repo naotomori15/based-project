@@ -1,3 +1,4 @@
+import useData from '@/hooks/useData';
 import Image from 'next/image';
 import React from 'react';
 
@@ -9,7 +10,8 @@ function Loading() {
   );
 }
 
-export default function About({ aboutRef, data, isLoading }) {
+export default function About({ aboutRef }) {
+  const { data, isLoading, isError } = useData('about');
   return (
     <section
       ref={aboutRef}
@@ -20,22 +22,24 @@ export default function About({ aboutRef, data, isLoading }) {
           {isLoading ? (
             <Loading />
           ) : (
-            <>
-              <div className='group w-full h-full'>
-                <Image
-                  src={data?.imageUrl}
-                  alt='Sepatu 3'
-                  width={440}
-                  height={580}
-                  className='md:w-[440px] md:h-[580px] w-auto h-auto transition-all group-hover:scale-110'
-                />
-              </div>
-              <div>
-                <p className='text-slate-900 text-xl break-words leading-loose'>
-                  {data?.description}
-                </p>
-              </div>
-            </>
+            data?.map((item) => (
+              <>
+                <div className='group w-full h-full'>
+                  <Image
+                    src={item?.photo}
+                    alt='Sepatu 3'
+                    width={440}
+                    height={580}
+                    className='md:w-[440px] md:h-[580px] w-auto h-auto transition-all group-hover:scale-110'
+                  />
+                </div>
+                <div>
+                  <p className='text-slate-900 text-xl break-words leading-loose'>
+                    {item?.description}
+                  </p>
+                </div>
+              </>
+            ))
           )}
         </div>
       </div>

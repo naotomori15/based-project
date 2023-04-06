@@ -1,13 +1,22 @@
 import Head from 'next/head';
-import { About, Hero, Layout, Product } from '@/components';
-import { useRef } from 'react';
-import useData from '@/hooks/useData';
+import { About, Hero, Layout, Product, Gambling } from '@/components';
+import { useRef, useState, useEffect } from 'react';
 
 export default function Home() {
   const aboutRef = useRef(null);
   const productRef = useRef(null);
-  const { data, isLoading } = useData('api/v1/ads');
+  const [windowWidth, setWindoWidth] = useState(null);
+  const [isGambling, setIsGambling] = useState(false);
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindoWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleWindowResize);
 
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
   return (
     <>
       <Head>
@@ -25,26 +34,27 @@ export default function Home() {
           href='/favicon.ico'
         />
       </Head>
-      <Layout
-        aboutRef={aboutRef}
-        productRef={productRef}
-        dataHeader={data?.hero}
-        dataFooter={data?.hero}>
-        <Hero
-          data={data?.hero}
-          isLoading={isLoading}
-        />
-        <About
+      {windowWidth < 576 ? (
+        isGambling ? (
+          <Gambling />
+        ) : (
+          <Layout
+            aboutRef={aboutRef}
+            productRef={productRef}>
+            <Hero />
+            <About aboutRef={aboutRef} />
+            <Product productRef={productRef} />
+          </Layout>
+        )
+      ) : (
+        <Layout
           aboutRef={aboutRef}
-          data={data?.about}
-          isLoading={isLoading}
-        />
-        <Product
-          productRef={productRef}
-          data={data?.product}
-          isLoading={isLoading}
-        />
-      </Layout>
+          productRef={productRef}>
+          <Hero />
+          <About aboutRef={aboutRef} />
+          <Product productRef={productRef} />
+        </Layout>
+      )}
     </>
   );
 }
