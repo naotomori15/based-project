@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "ShoesX",
+    "description": "Kenali kualitas sneaker anda, beli dengan kualitas yang gacor. Pilih sneaker yang cocok, nyaman, dan dengan brand terpercaya",
+    "imageUrl": "/images/sepatu-1.png"
+  },
+  "about": {
+    "imageUrl": "/images/ssepatu-3.jpg",
+    "description": "Selamat datang di website sepatu! Kami adalah sebuah toko online yang menyediakan berbagai jenis sepatu untuk segala kebutuhan Anda. Kami berkomitmen untuk memberikan pengalaman belanja yang mudah, aman, dan menyenangkan bagi pelanggan kami. Di website kami, Anda akan menemukan berbagai macam jenis sepatu, mulai dari sepatu casual, sepatu olahraga, sepatu formal,sepatu gacor, dan banyak lagi. Kami bekerja sama dengan merek-merek terkenal di dunia untuk memberikan pilihan sepatu yang berkualitas dan terpercaya."
+  },
+  "project": [
+    {
+      "id": 1,
+      "name": "Adidas Ultraboost",
+      "imageUrl": "/images/sepatu-2.png",
+      "description": "Adidas Ultraboost adalah sepatu lari yang terkenal dengan kenyamanan dan teknologi sol yang inovatif. Sol sepatu dilengkapi dengan teknologi Boost yang memberikan responsif dan penyerapan guncangan yang sangat baik saat berlari."
+    },
+    {
+      "id": 2,
+      "name": "Adidas Superstar",
+      "imageUrl": "/images/sepatu-4.jpg",
+      "description": "Adidas Superstar adalah sepatu retro yang klasik dan populer di kalangan penggemar sneaker. Sepatu ini memiliki desain yang simple dan icongraphic shell-toe yang terbuat dari bahan kulit."
+    },
+    {
+      "id": 3,
+      "name": "Adidas NMD",
+      "imageUrl": "/images/sepatu-5.jpg",
+      "description": " Adidas NMD adalah sepatu kasual yang menggabungkan teknologi sol yang canggih dengan desain futuristik. Solnya dilengkapi dengan teknologi Boost dan midsole EVA yang memberikan kenyamanan sepanjang hari."
+    },
+    {
+      "id": 4,
+      "name": "Adidas Stan",
+      "imageUrl": "/images/sepatu-6.jpg",
+      "description": "Adidas Stan Smith adalah sepatu klasik yang sangat terkenal dan populer. Sepatu ini memiliki desain yang sederhana dan elegan dengan bahan dasar kulit dan logo Three Stripes di sisi sepatu."
+    },
+    {
+      "id": 1,
+      "name": "Adidas Yeezy Boost",
+      "imageUrl": "/images/sepatu-7.png",
+      "description": "Adidas Yeezy Boost adalah hasil kolaborasi antara Adidas dan rapper ternama Kanye West. Sepatu ini memiliki desain yang futuristik dan sangat diminati oleh penggemar sneaker. Solnya dilengkapi dengan teknologi Boost dan dilengkapi dengan detail yang khas dari brand Yeezy."
+    }
+  ]
+}
