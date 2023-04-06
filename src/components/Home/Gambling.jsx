@@ -11,7 +11,7 @@ export default function Gambling() {
       {data.map((item) => (
         <div
           key={item._id}
-          className='overflow-hidden w-ful h-full'>
+          className='overflow-hidden w-ful h-[100vh]'>
           <CustomButton
             type='link'
             isExternal
