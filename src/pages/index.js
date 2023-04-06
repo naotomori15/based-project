@@ -8,10 +8,11 @@ export default function Home() {
 
   const aboutRef = useRef(null);
   const productRef = useRef(null);
-  const [windowWidth, setWindoWidth] = useState(577);
+  const [windowWidth, setWindoWidth] = useState(null);
   const [isGambling, setIsGambling] = useState(null);
   const gamblingData = data?.map(({ isGambling }) => isGambling);
   useEffect(() => {
+    setWindoWidth(window.screen.width);
     if (data?.length > 0) {
       if (gamblingData != undefined) setIsGambling(JSON.parse(gamblingData));
     }
