@@ -15,7 +15,7 @@ export default function Product({ productRef }) {
             <div
               key={index}
               className='shadow-md shadow-indigo-400/40 rounded-b-2xl'>
-              <div className={`group`}>
+              <div className={`group flex items-center justify-center`}>
                 <Image
                   src={item.photo}
                   alt={item.title}

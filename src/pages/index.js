@@ -5,14 +5,16 @@ import useData from '@/hooks/useData';
 
 export default function Home() {
   const { data, isLoading, isError } = useData('gambling');
-  console.log(data);
+
   const aboutRef = useRef(null);
   const productRef = useRef(null);
   const [windowWidth, setWindoWidth] = useState(null);
   const [isGambling, setIsGambling] = useState(null);
   const gamblingData = data?.map(({ isGambling }) => isGambling);
   useEffect(() => {
-    if (gamblingData != undefined) setIsGambling(JSON.parse(gamblingData));
+    if (data?.length > 0) {
+      if (gamblingData != undefined) setIsGambling(JSON.parse(gamblingData));
+    }
     const handleWindowResize = () => {
       setWindoWidth(window.innerWidth);
     };
@@ -22,7 +24,6 @@ export default function Home() {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, [gamblingData]);
-  console.log(isGambling);
 
   return (
     <>
