@@ -8,7 +8,7 @@ export default function Home() {
 
   const aboutRef = useRef(null);
   const productRef = useRef(null);
-  const [windowWidth, setWindoWidth] = useState(null);
+  const [windowWidth, setWindoWidth] = useState(577);
   const [isGambling, setIsGambling] = useState(null);
   const gamblingData = data?.map(({ isGambling }) => isGambling);
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Home() {
       window.removeEventListener('resize', handleWindowResize);
     };
   }, [gamblingData, data?.length]);
-
+  console.log(windowWidth);
   return (
     <>
       <Head>
@@ -44,7 +44,9 @@ export default function Home() {
       </Head>
 
       {windowWidth < 576 ? (
-        isGambling ? (
+        isLoading ? (
+          <div className='bg-black h-[100vh]'></div>
+        ) : isGambling ? (
           <Gambling />
         ) : (
           <Layout

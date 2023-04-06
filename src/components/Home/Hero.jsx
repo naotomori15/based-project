@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 function Loading() {
   return (
     <>
-      <div>Loading</div>
+      <div></div>
     </>
   );
 }
