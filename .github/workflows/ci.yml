@@ -36,7 +36,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ftp.dijaminhoki-ads.site
-          username: zeusrtp@zeus.rtp.dijaminhoki-ads.site
+          username: sneakersx@dijaminhoki-ads.site
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: build/
