@@ -29,14 +29,12 @@ jobs:
           npm install
           npm run build
 
-      - name: List output files
-        run: find build/ -print
-
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           server: ftp.dijaminhoki-ads.site
-          username: sneakersx@dijaminhoki-ads.site
+          username: exampleads@exampletest.dijaminhoki-ads.site
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          local-dir: build/
+          exclude: |
+            **/node_modules/**
