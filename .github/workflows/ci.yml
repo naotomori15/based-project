@@ -36,7 +36,6 @@ jobs:
           username: zeusmaxwin@zeusmaxwin.dijaminhoki-ads.site
           password: ${{ secrets.FTP_PASSWORD }}
           exclude: |
-            .env
             **/.git*
             **/.git*/**
              **/node_modules/**
