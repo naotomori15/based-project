@@ -35,8 +35,8 @@ jobs:
           server: ftp.dijaminhoki-ads.site
           username: zeusmaxwin@zeusmaxwin.dijaminhoki-ads.site
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
           exclude: |
+            .env
             **/.git*
             **/.git*/**
              **/node_modules/**
