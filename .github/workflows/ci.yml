@@ -5,7 +5,7 @@ on:
     branches:
       - main
 env:
-  REACT_APP_API_FB_KEY: ${{ secrets.NEXT_PUBLIC_API }}
+  NEXT_PUBLIC_API: ${{ secrets.NEXT_PUBLIC_API }}
 jobs:
   web-deploy:
     name: 🎉 Deploy
